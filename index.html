@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap-5.3.8-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/Icons.css">
+    <style>
+        body{
+             /* justify-content: center;
+            align-items: center;
+            display: flex; */
+            /* min-height: 1000px; */
+            /* flex-wrap: wrap;
+            align-content: start;
+            flex-direction: column-reverse; */
+            /* flex-direction: column; */
+            /* border: 8px solid; */
+            /* gap: 10px; */
+            /* display: flex;
+            flex-direction: column; */
+        }
+        .box{
+            flex-grow: 4;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+        }
+        .content{
+            display: flex;
+
+        }
+        #box-1{
+            flex-grow: 4;
+
+           /* flex-shrink: 0; */
+        }
+        /* @media (max-width:575px) {
+            body{
+                flex-wrap: wrap;
+            }
+        } */
+        body header{
+           
+
+         }
+        
+        </style>
+</head>
+<body class="ibody" dir="rtl" >
+    <script src="JS/script.js"></script>
+   
+   
+    <div class="c">
+        <div class="fa-user sidbar2">
+            
+            
+            <span>
+                
+                <img onclick=""  class="image-text" src="Logo.svg" alt="" srcset=""></img>
+            </span>
+            <span>
+
+                <span  class="title  " > العليمي
+                </span>
+                <span  class="title " >لقطع الغيار</span>
+            </span>
+            
+            <div onclick="ClickSide('main.html');"class="btn mybtns bg-danger text-light "> الرئيسية</div>
+            <div onclick="ClickSide('products.html');" class="btn mybtns bg-danger text-light"> المنتجات</div>
+            <div onclick="ClickSide('cart.html');" class="btn mybtns bg-danger text-light"> السلة</div>
+            <div onclick="ClickSide('contact.html');" class="btn mybtns bg-danger text-light"> اتصل بنا</div>
+            <div onclick="ClickSide('about.html');" class="btn mybtns bg-danger text-light">من نحن</div>
+            <div id="carts" onclick="ClickSide('carts.html');" class="btn mybtns bg-danger text-light">طلبات العملاء </div>
+            <div  id="clients" onclick="ClickSide('RecClients.html');" class="btn mybtns bg-danger text-light">خدمة العملاء</div>
+        </div>
+        <div class="c" style="flex-direction: column;">
+
+            <header class="header2">
+                <div class="bar2">
+                    <div onclick="ClickSide('Register2.html');" class="btn bt2 text-light bg-danger" href="#">تسجيل</div>
+                    <div onclick="ClickSide('login.html');" class="btn bt3 text-light bg-danger" href="#">تسجيل الدخول</div>
+                    <div  onclick="logout();" class="btn bt3 text-light bg-danger" href="#">تسجيل الخروج</div>
+                </div>
+            </header>
+            <iframe class="toto" name="myfrm" id="frm5" scrolling="no" src="main.html" frameborder="0"></iframe>
+        </div>
+</div>
+    
+    
+</div>
+<footer class="bg-light">
+    <center>
+
+        تطوير المهندس عدي العليمي 2025 &copy;
+    </center>
+</footer>
+<!-- <div class="col">
+    
+    <header class="row bg-primary ">
+        <h1 class="text text-danger">aswdqwd</h1>
+    </header>
+    <div class="row ">
+        <div class="col-2 bg-secondary">
+            <div class="btn bg-info btn-xl" >sss</div>
+            <div class="btn bg-info">sss</div>
+            <div class="btn bg-info">sss</div>
+            <div class="btn bg-info">sss</div>
+            <div class="btn bg-info">sss</div>
+        </div>
+        <div class="col-10 bg-dark">adda</div>
+    </div>
+    <footer class="row ">
+       
+        <div class="col bg-success">adda</div>
+    </footer>
+</div> -->
+    <!-- <HEader>
+        <button>saasd</button>
+        <button>saasd</button>
+        <button>saasd</button>
+        <button>saasd</button>
+    </HEader> -->
+    <!-- <div id="box-1" class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div> -->
+    <!-- <div class="box">4</div>
+    <div class="box">4</div>
+    <div class="box">4</div>
+    <div class="box">4</div>
+    <div class="box">4</div> -->
+<!-- <div class="content">
+
+    <div class="sidbar">
+        <button class="btn ">sas</button>
+        <button class="btn ">sas</button>
+    </div>
+    
+    <iframe src="about.html" frameborder="0"></iframe>
+</div>
+<footer>
+    &cap; adfaf
+</footer> -->
+</body>
+</html>

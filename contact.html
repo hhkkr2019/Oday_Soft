@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documsssent</title>
+    <link rel="stylesheet" href="CSS/style.css">
+   
+    
+</head>
+<body class="mybody">
+<div>
+
+    <style>
+        .mybody {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            
+        }
+        
+        .form-container {
+            
+            padding: 20px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            backdrop-filter: blur(10px);
+        }
+        .registration-form{
+            background-color: transparent;
+            margin-left: 100px;
+           
+            
+            
+            
+        }
+        
+        .registration-form h2 {
+            margin-bottom: 20px;
+            color: white;
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid white;
+            
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        
+        .form-group input:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+        
+        .mybtn {
+            width: 100%;
+            padding: 10px;
+            /*
+            background: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease; */
+        }
+        
+        .btn:hover {
+            background-color: blue;
+            background: #0056b3;
+        }
+        
+        .error {
+            color: red;
+            font-size: 13px;
+        }
+        
+        .success {
+            color: green;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        </style>
+    <div class="form-container">
+        
+        
+        <form class="registration-form" >
+            <h2>خدمة العملاء</h2>
+            
+            
+            
+            
+            <div class="form-group">
+                <label for="email">الموضوع</label>
+                <input type="text" id="titl"  placeholder="قم بإدخال  الموضوع" required>
+                
+            </div>
+            
+            <div class="form-group">
+                <label >الوصف</label>
+              
+                <textarea style="height: 200px;" name="description" id="desc" placeholder="قم بإدخال الوصف" required></textarea>
+                <span id="success"></span>
+            </div>
+            
+            
+            
+            <button  type="button" onclick="AddToRec();" class="btn mybtn">إرسال</button>
+        </form>
+    </div>
+    
+    <!-- <header>
+        <nav>
+            <a href="index.html">الرئيسية<span></span></a>
+            <a href="about.html">من نحن<span></span></a>
+            <a href="products.html">المنتجات<span></span></a>
+            <a href="services.html">خدماتنا<span></span></a>
+            <a href="cart.html">السلة<span></span></a>
+            <a href="#" class="active">اتصل بنا<span></span></a>
+        </nav>
+    </header> -->
+</div>
+  <script src="JS/script.js"></script>
+</body>
+
+
+</html>

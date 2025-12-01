@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>سلة المشتريات - متجر قطع غيار السيارات</title>
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body style="margin: 50px; " onload="GetTable()">
+  <script src="JS/script.js" > 
+  </script>
+
+
+<section class="cart-table">
+  <br>
+  <br>
+  <h1 style="color: aliceblue;">سلة المشتريات</h1>
+  <table onload="GetTable()" id="tabcart" class="table table">
+    <tr>
+      <th>المنتج</th>
+      <th>الكمية</th>
+      <th>السعر</th>
+    </tr>
+  
+  </table>
+  <p><strong>الإجمالي: </strong><span id="total"></span> $</p>
+</section>
+</body>
+
+</html>

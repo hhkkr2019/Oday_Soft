@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" class="black">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="CSS/style.css">
+    </head>
+    <body class="mybody">
+    <script src="JS/script.js" >
+
+    </script>
+    <div>
+        <style>
+            .mybody {
+                font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+           
+            }
+            
+        .form-container {
+           
+            padding: 20px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            backdrop-filter: blur(10px);
+        }
+        .registration-form{
+            background-color: transparent;
+            margin-left: 100px;
+          
+       
+
+           
+        }
+        
+        .registration-form h2 {
+            margin-bottom: 20px;
+            color: black;
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: black;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid black;
+            
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        
+        .form-group input:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+        
+        .mybtns {
+            width: 100%;
+            padding: 10px;
+            /*
+            background: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease; */
+        }
+        
+        .btns:hover {
+            background-color: blue;
+            background: #0056b3;
+        }
+        
+        .error {
+            color: red;
+            font-size: 13px;
+        }
+        
+        .success {
+            color: green;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        </style>
+    <div class="form-container">
+        
+        
+        <form class="registration-form" >
+            <h2>تسجيل الدخول</h2>
+
+            
+            
+            
+            <div class="form-group">
+                <label class="lbl" >اسم المستخدم</label>
+                <input type="email" id="username"  placeholder="قم بإدخال اسم المستخدم" required>
+                
+            </div>
+            
+            <div class="form-group">
+                <label class="lbl" for="password">كلمة المرور</label>
+                <input type="password" id="password"  placeholder="قم بإدخال كلمة المرور" required>
+                
+                <span id="success"></span>
+            </div>
+            
+             
+            
+            <button type="button" onclick="OnClick();" class="btns mybtns">تسجيل الدخول</button>
+        </form>
+    </div>
+    </div>
+    
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ar" >
+<head>
+  <meta charset="UTF-8">
+  <title>تفاصيل المنتج - متجر قطع غيار السيارات</title>
+  <link rel="stylesheet" href="css/style.css">
+ 
+  <!-- <link rel="stylesheet" href="bootstrap-5.3.8-dist/css/bootstrap.css"> -->
+</head>
+<body onload="GetProd()">
+  <header>
+    <!-- <nav>
+      <a href="main.html">الرئيسية<span></span></a>
+      
+      <a href="products.html">المنتجات<span></span></a>
+      
+      <a href="cart.html">السلة<span></span></a>
+      
+    </nav>
+    -->
+  </header>
+  
+  <section class="page-content">
+    <h1>تفاصيل المنتج</h1>
+    <button onclick="GetProd()">ss</button>
+    <div class="product-details">
+      <img onclick="GetProd()" id="img" src="brake-pads.png" alt="إطار">
+      <div>
+        <h2 id="product">إطار sأصلي</h2>
+        <p>جودة عالية وضمان لمدة سنة.</p>
+        <span class="text text-info" style="color: white;">العدد</span>
+        <span class="text text-info" style="color: white;">      : </span>
+        <span id="qty" class="text text-info" style="color: white;">1</span>
+        
+        <button onclick="increment()" id="inc" class="text text-info" style="color: red; font-size: 5;">  +</button>
+        <button onclick="decrement()" id="dec" class="text text-info" style="color: red; font-size: 5;">- </button>
+        
+        <p><strong>السعر: <SPan id="price"></SPan>$</strong></p>
+        
+        
+        <button onclick="AddToCart()" class="btn" style="background-color: white;">
+ أضف للسلة
+          <a id="add"  href="cart.html" ></a>
+        </button>
+      </div>
+    </div>
+  </section>
+  
+  <!-- <footer>
+    <p> متجر العليمي لقطع غيار السيارات 2025 &copy;</p>
+    
+  </footer> -->
+  <script src="JS/script.js"></script>
+
+</body>
+</html>
