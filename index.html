@@ -1,151 +1,1218 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="bootstrap-5.3.8-dist/css/bootstrap.css">
-    <link rel="stylesheet" href="CSS/style.css">
-    <link rel="stylesheet" href="CSS/Icons.css">
+    <title>الصفحة الشخصية للمهندس عدي العليمي </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        body{
-             /* justify-content: center;
-            align-items: center;
-            display: flex; */
-            /* min-height: 1000px; */
-            /* flex-wrap: wrap;
-            align-content: start;
-            flex-direction: column-reverse; */
-            /* flex-direction: column; */
-            /* border: 8px solid; */
-            /* gap: 10px; */
-            /* display: flex;
-            flex-direction: column; */
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #1a252f;
+            --success: #27ae60;
+            --warning: #f39c12;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
         }
-        .box{
-            flex-grow: 4;
-            justify-content: center;
-            align-items: center;
-            display: flex;
-            width: 200px;
-            height: 200px;
-            background-color: aqua;
-        }
-        .content{
-            display: flex;
-
-        }
-        #box-1{
-            flex-grow: 4;
-
-           /* flex-shrink: 0; */
-        }
-        /* @media (max-width:575px) {
-            body{
-                flex-wrap: wrap;
-            }
-        } */
-        body header{
-           
-
-         }
         
-        </style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Tajawal', 'Cairo', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+      
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: white;
+            padding: 1.5rem 0;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-left: 10px;
+            color: var(--secondary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-right: 20px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: var(--transition);
+        }
+        
+        nav ul li a:hover, nav ul li a.active {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--secondary);
+        }
+        
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        
+        .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.85), rgba(44, 62, 80, 0.95)), url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 5rem 0;
+            margin-bottom: 3rem;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 900px;
+            margin: 0 auto 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: #2980b9;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* الأقسام العامة */
+        section {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary);
+            bottom: 0;
+            right: 50%;
+            transform: translateX(50%);
+        }
+        
+        /* قسم الدورات */
+        .courses-overview {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 1.2rem;
+            color: #555;
+        }
+        
+        .courses-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .course-card, .project-card, .certificate-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            height: 100%;
+        }
+        
+        .course-card:hover, .project-card:hover, .certificate-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card-header {
+            padding: 20px;
+            color: white;
+        }
+        
+        .card-header h3 {
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+        }
+        
+        .card-body {
+            padding: 20px;
+        }
+        
+        .card-body p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+        
+        .card-footer {
+            padding: 15px 20px;
+            background-color: #f8f9fa;
+            border-top: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .tag {
+            background-color: var(--light);
+            color: var(--primary);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+            margin: 3px;
+        }
+        
+        .level-indicator {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: white;
+            margin-left: 5px;
+        }
+        
+        .level-1 { background-color: #27ae60; }
+        .level-2 { background-color: #3498db; }
+        .level-3 { background-color: #9b59b6; }
+        .level-4 { background-color: #f39c12; }
+        .level-5 { background-color: #e74c3c; }
+        .level-6 { background-color: #2c3e50; }
+        
+        /* المهارات */
+        .skills-section {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 30px;
+            margin-top: 40px;
+        }
+        
+        .skills-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        .skill-category {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        .skill-category h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+        }
+        
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .skill-list .tag {
+            background-color: #e8f4fc;
+            color: var(--secondary);
+        }
+        
+        /* قسم المشاريع */
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .project-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .project-card:hover .project-image img {
+            transform: scale(1.05);
+        }
+        
+        /* قسم الشهادات */
+        .certificates-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .certificate-image {
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f5f5f5;
+        }
+        
+        .certificate-image i {
+            font-size: 4rem;
+            color: var(--secondary);
+        }
+        
+        /* الجدول الزمني */
+        .timeline-container {
+            max-width: 1000px;
+            margin: 40px auto;
+            position: relative;
+        }
+        
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--secondary);
+            top: 0;
+            bottom: 0;
+            right: 50%;
+            transform: translateX(50%);
+        }
+        
+        .timeline-item {
+            margin-bottom: 40px;
+            width: 50%;
+            position: relative;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            padding-right: 50px;
+            padding-left: 0;
+            right: 0;
+        }
+        
+        .timeline-item:nth-child(even) {
+            padding-left: 50px;
+            padding-right: 0;
+            left: 50%;
+        }
+        
+        .timeline-dot {
+            width: 20px;
+            height: 20px;
+            background-color: var(--secondary);
+            border-radius: 50%;
+            position: absolute;
+            top: 15px;
+            z-index: 1;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-dot {
+            left: -10px;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-dot {
+            right: -10px;
+        }
+        
+        .timeline-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        .timeline-content h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        /* الفوتر */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 0 1.5rem;
+            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            color: white;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        /* التفعيل التفاعلي */
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .filter-btn {
+            background-color: #eee;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 600;
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        /* التجاوب مع الشاشات الصغيرة */
+        @media (max-width: 992px) {
+            .timeline-container::before {
+                right: 30px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-right: 70px !important;
+                padding-left: 0 !important;
+                right: 0 !important;
+                left: 0 !important;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-dot,
+            .timeline-item:nth-child(even) .timeline-dot {
+                left: 20px;
+                right: auto;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                width: 100%;
+                background-color: var(--primary);
+                flex-direction: column;
+                text-align: center;
+                padding: 20px 0;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            }
+            
+            nav ul.show {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .courses-container, .projects-container, .certificates-container, .skills-categories {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
-<body class="ibody" dir="rtl" >
-    <script src="JS/script.js"></script>
-   
-   
-    <div class="c">
-        <div class="fa-user sidbar2">
+<body>
+    <!-- الترويسة -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-laptop-code"></i>
+                <span></span>
+            </div>
             
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
             
-            <span>
-                
-                <img onclick=""  class="image-text" src="Logo.svg" alt="" srcset=""></img>
-            </span>
-            <span>
-
-                <span  class="title  " > العليمي
-                </span>
-                <span  class="title " >لقطع الغيار</span>
-            </span>
-            
-            <div onclick="ClickSide('main.html');"class="btn mybtns bg-danger text-light "> الرئيسية</div>
-            <div onclick="ClickSide('products.html');" class="btn mybtns bg-danger text-light"> المنتجات</div>
-            <div onclick="ClickSide('cart.html');" class="btn mybtns bg-danger text-light"> السلة</div>
-            <div onclick="ClickSide('contact.html');" class="btn mybtns bg-danger text-light"> اتصل بنا</div>
-            <div onclick="ClickSide('about.html');" class="btn mybtns bg-danger text-light">من نحن</div>
-            <div id="carts" onclick="ClickSide('carts.html');" class="btn mybtns bg-danger text-light">طلبات العملاء </div>
-            <div  id="clients" onclick="ClickSide('RecClients.html');" class="btn mybtns bg-danger text-light">خدمة العملاء</div>
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="#home" class="active">الرئيسية</a></li>
+                    <li><a href="#courses">الكورسات (24+)</a></li>
+                    <li><a href="#skills">المهارات</a></li>
+                    <li><a href="#projects">المشاريع</a></li>
+                    <li><a href="#timeline">الجدول الزمني</a></li>
+                    <li><a href="#certificates">الشهادات</a></li>
+                    <li><a href="#contact">التواصل</a></li>
+                </ul>
+            </nav>
         </div>
-        <div class="c" style="flex-direction: column;">
-
-            <header class="header2">
-                <div class="bar2">
-                    <div onclick="ClickSide('Register2.html');" class="btn bt2 text-light bg-danger" href="#">تسجيل</div>
-                    <div onclick="ClickSide('login.html');" class="btn bt3 text-light bg-danger" href="#">تسجيل الدخول</div>
-                    <div  onclick="logout();" class="btn bt3 text-light bg-danger" href="#">تسجيل الخروج</div>
-                </div>
-            </header>
-            <iframe class="toto" name="myfrm" id="frm5" scrolling="no" src="main.html" frameborder="0"></iframe>
-        </div>
-</div>
-    
-    
-</div>
-<footer class="bg-light">
-    <center>
-
-        تطوير المهندس عدي العليمي 2025 &copy;
-    </center>
-</footer>
-<!-- <div class="col">
-    
-    <header class="row bg-primary ">
-        <h1 class="text text-danger">aswdqwd</h1>
     </header>
-    <div class="row ">
-        <div class="col-2 bg-secondary">
-            <div class="btn bg-info btn-xl" >sss</div>
-            <div class="btn bg-info">sss</div>
-            <div class="btn bg-info">sss</div>
-            <div class="btn bg-info">sss</div>
-            <div class="btn bg-info">sss</div>
-        </div>
-        <div class="col-10 bg-dark">adda</div>
-    </div>
-    <footer class="row ">
-       
-        <div class="col bg-success">adda</div>
-    </footer>
-</div> -->
-    <!-- <HEader>
-        <button>saasd</button>
-        <button>saasd</button>
-        <button>saasd</button>
-        <button>saasd</button>
-    </HEader> -->
-    <!-- <div id="box-1" class="box">1</div>
-    <div class="box">2</div>
-    <div class="box">3</div>
-    <div class="box">4</div> -->
-    <!-- <div class="box">4</div>
-    <div class="box">4</div>
-    <div class="box">4</div>
-    <div class="box">4</div>
-    <div class="box">4</div> -->
-<!-- <div class="content">
 
-    <div class="sidbar">
-        <button class="btn ">sas</button>
-        <button class="btn ">sas</button>
-    </div>
-    
-    <iframe src="about.html" frameborder="0"></iframe>
-</div>
-<footer>
-    &cap; adfaf
-</footer> -->
+    <!-- القسم الرئيسي -->
+    <section class="hero" id="home">
+        <div class="container">
+                <h1>الصفحة الشخصية للمهندس عدي العليمي <h1>
+
+            <h2>رحلتي في تعلم البرمجة والتطوير</h2>
+            <BR></BR>
+            <p>أكثر من 24 كورساً متخصصاً في الخوارزميات، هياكل البيانات، C#، قواعد البيانات، OOP، بالإضافة إلى لغات وتقنيات أخرى مثل Dart، Flutter، Maui، PHP، Laravel، JavaScript، HTML/CSS</p>
+            <a href="#courses" class="btn">استعرض كورساتي</a>
+        </div>
+    </section>
+
+    <!-- قسم الكورسات -->
+    <section id="courses">
+        <div class="container">
+            <div class="section-title">
+                <h2>الكورسات المتخصصة</h2>
+            </div>
+            
+            <div class="courses-overview">
+                <p>أكثر من <strong>24 كورساً</strong> في مجالات متعددة تغطي أساسيات البرمجة، الخوارزميات المتقدمة، تطوير الواجهات الخلفية، وقواعد البيانات</p>
+            </div>
+            
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">الكل</button>
+                <button class="filter-btn" data-filter="algorithms">الخوارزميات</button>
+                <button class="filter-btn" data-filter="csharp">C#</button>
+                <button class="filter-btn" data-filter="oop">OOP</button>
+                <button class="filter-btn" data-filter="database">قواعد البيانات</button>
+                <button class="filter-btn" data-filter="foundations">الأساسيات</button>
+            </div>
+            
+            <div class="courses-container">
+                <!-- كورسات C# -->
+                <div class="course-card" data-category="csharp">
+                    <div class="card-header" style="background-color: #178600;">
+                        <h3>C# - Level 1</h3>
+                        <p>أساسيات لغة C# والبرمجة الكائنية</p>
+                    </div>
+                    <div class="card-body">
+                        <p>تعلم أساسيات لغة C#، أنواع البيانات، المتحولات، هياكل التحكم، الدوال والمزيد.</p>
+                        <div class="skills">
+                            <span class="tag">C# Basics</span>
+                            <span class="tag">Variables</span>
+                            <span class="tag">Control Structures</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <span class="level-indicator level-1">مستوى 1</span>
+                        <span>مكتمل</span>
+                    </div>
+                </div>
+                
+                <div class="course-card" data-category="csharp">
+                    <div class="card-header" style="background-color: #178600;">
+                        <h3>C# - Level 2</h3>
+                        <p>مواضيع متقدمة في لغة C#</p>
+                    </div>
+                    <div class="card-body">
+                        <p>البرمجة الكائنية، الوراثة، تعدد الأشكال، الواجهات، الاستثناءات والمزيد.</p>
+                        <div class="skills">
+                            <span class="tag">OOP</span>
+                            <span class="tag">Inheritance</span>
+                            <span class="tag">Polymorphism</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <span class="level-indicator level-2">مستوى 2</span>
+                        <span>مكتمل</span>
+                    </div>
+                </div>
+                
+                <div class="course-card" data-category="csharp">
+                    <div class="card-header" style="background-color: #178600;">
+                        <h3>C# - Level 3 & 4</h3>
+                        <p>متقدم ومشاريع في C#</p>
+                    </div>
+                    <div class="card-body">
+                        <p>LINQ، الـ Delegates، الأحداث، الـ Async/Await، تطوير تطبيقات Windows والمزيد.</p>
+                        <div class="skills">
+                            <span class="tag">LINQ</span>
+                            <span class="tag">Async/Await</span>
+                            <span class="tag">.NET Core</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <span class="level-indicator level-4">مستوى 4</span>
+                        <span>مكتمل</span>
+                    </div>
+                </div>
+                
+                <!-- كورسات الخوارزميات -->
+                <div class="course-card" data-category="algorithms">
+                    <div class="card-header" style="background-color: #f39c12;">
+                        <h3>Algorithms Level 1 - 6</h3>
+                        <p>مسار كامل للخوارزميات من المبتدئ إلى المتقدم</p>
+                    </div>
+                    <div class="card-body">
+                        <p>6 مستويات متكاملة تغطي الخوارزميات الأساسية والمتقدمة، تحليل التعقيد، هياكل البيانات المرتبطة.</p>
+                        <div class="skills">
+                            <span class="tag">Sorting</span>
+                            <span class="tag">Searching</span>
+                            <span class="tag">Graphs</span>
+                            <span class="tag">Dynamic Programming</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <span class="level-indicator level-6">مستوى 6</span>
+                        <span>مكتمل</span>
+                    </div>
+                </div>
+                
+                <!-- كورسات OOP -->
+                <div class="course-card" data-category="oop">
+                    <div class="card-header" style="background-color: #9b59b6;">
+                        <h3>OOP Level 1 & 2</h3>
+                        <p>البرمجة الكائنية التوجه</p>
+                    </div>
+                    <div class="card-body">
+                        <p>مبادئ OOP الأربعة (التغليف، الوراثة، تعدد الأشكال، التجريد)، الأنماط التصميمية.</p>
+                        <div class="skills">
+                            <span class="tag">Encapsulation</span>
+                            <span class="tag">Inheritance</span>
+                            <span class="tag">Design Patterns</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <span class="level-indicator level-2">مستوى 2</span>
+                        <span>مكتمل</span>
+                    </div>
+                </div>
+                
+                <!-- كورسات قواعد البيانات -->
+                <div class="course-card" data-category="database">
+                    <div class="card-header" style="background-color: #3498db;">
+                        <h3>Database Level 1 & 2</h3>
+                        <p>قواعد البيانات SQL و T-SQL</p>
+                    </div>
+                    <div class="card-body">
+                        <p>تصميم قواعد البيانات، SQL queries، الـ Joins، الـ Stored Procedures، الـ Functions، الـ Triggers.</p>
+                        <div class="skills">
+                            <span class="tag">SQL</span>
+                            <span class="tag">T-SQL</span>
+                            <span class="tag">Database Design</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <span class="level-indicator level-2">مستوى 2</span>
+                        <span>مكتمل</span>
+                    </div>
+                </div>
+                
+                <!-- REST API -->
+                <div class="course-card" data-category="csharp">
+                    <div class="card-header" style="background-color: #512bd4;">
+                        <h3>RESTful API on .NET Core</h3>
+                        <p>تطوير واجهات برمجة تطبيقات RESTful</p>
+                    </div>
+                    <div class="card-body">
+                        <p>بناء APIs متكاملة باستخدام .NET Core، الـ Authentication، الـ Authorization، الـ Swagger.</p>
+                        <div class="skills">
+                            <span class="tag">REST API</span>
+                            <span class="tag">.NET Core</span>
+                            <span class="tag">JWT</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <span class="level-indicator level-3">مستوى 3</span>
+                        <span>مكتمل</span>
+                    </div>
+                </div>
+                
+                <!-- هياكل البيانات -->
+                <div class="course-card" data-category="algorithms">
+                    <div class="card-header" style="background-color: #e74c3c;">
+                        <h3>Data Structures Level 1 & 2</h3>
+                        <p>هياكل البيانات المتقدمة</p>
+                    </div>
+                    <div class="card-body">
+                        <p>المصفوفات، القوائم المترابطة، المكدسات، الطوابير، الأشجار، الرسوم البيانية، الجداول التجزئة.</p>
+                        <div class="skills">
+                            <span class="tag">Linked Lists</span>
+                            <span class="tag">Trees</span>
+                            <span class="tag">Hash Tables</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <span class="level-indicator level-2">مستوى 2</span>
+                        <span>مكتمل</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 30px;">
+                <p><strong>+ كورسات إضافية:</strong> Foundations Level 1 & 2، Advanced Solutions for Algorithms، Windows Services، ومشاريع متكاملة</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم المهارات -->
+    <section id="skills" style="background-color: #f8f9fa;">
+        <div class="container">
+            <div class="section-title">
+                <h2>المهارات التقنية</h2>
+            </div>
+            
+            <div class="skills-section">
+                <div class="skills-categories">
+                    <!-- لغات البرمجة -->
+                    <div class="skill-category">
+                        <h3><i class="fas fa-code"></i> لغات البرمجة</h3>
+                        <div class="skill-list">
+                            <span class="tag">C#</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">Dart</span>
+                            <span class="tag">PHP</span>
+                            <span class="tag">Java</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">HTML/CSS</span>
+                            <span class="tag">SQL / T-SQL</span>
+                        </div>
+                    </div>
+                    
+                    <!-- أطر العمل -->
+                    <div class="skill-category">
+                        <h3><i class="fas fa-cogs"></i> أطر العمل والمكتبات</h3>
+                        <div class="skill-list">
+                            <span class="tag">.NET / .NET Core</span>
+                            <span class="tag">Laravel</span>
+                            <span class="tag">Flutter</span>
+                            <span class="tag">Maui</span>
+                            <span class="tag">React</span>
+                            <span class="tag">jQuery</span>
+                            <span class="tag">Bootstrap</span>
+                        </div>
+                    </div>
+                    
+                    <!-- قواعد البيانات -->
+                    <div class="skill-category">
+                        <h3><i class="fas fa-database"></i> قواعد البيانات</h3>
+                        <div class="skill-list">
+                            <span class="tag">MySQL</span>
+                            <span class="tag">SQL Server</span>
+                            <span class="tag">SQLite</span>
+                            <span class="tag">MongoDB</span>
+                            <span class="tag">Entity Framework</span>
+                        </div>
+                    </div>
+                    
+                    <!-- مفاهيم متقدمة -->
+                    <div class="skill-category">
+                        <h3><i class="fas fa-brain"></i> مفاهيم متقدمة</h3>
+                        <div class="skill-list">
+                            <span class="tag">OOP</span>
+                            <span class="tag">Data Structures</span>
+                            <span class="tag">Algorithms</span>
+                            <span class="tag">RESTful APIs</span>
+                            <span class="tag">Design Patterns</span>
+                            <span class="tag">MVC</span>
+                            <span class="tag">Git & GitHub</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم المشاريع -->
+    <section id="projects">
+        <div class="container">
+            <div class="section-title">
+                <h2>مشاريعي التطبيقية</h2>
+            </div>
+            
+            <div class="projects-container">
+                <!-- مشروع 1 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="نظام إدارة متكامل">
+                    </div>
+                    <div class="card-body">
+                        <h3>نظام إدارة متكامل بلغة C#</h3>
+                        <p>نظام إدارة شامل باستخدام .NET Core وقاعدة بيانات SQL Server، مع واجهة مستخدم متكاملة وواجهة برمجة APIs.</p>
+                        <div class="skills">
+                            <span class="tag">C#</span>
+                            <span class="tag">.NET Core</span>
+                            <span class="tag">SQL Server</span>
+                            <span class="tag">REST API</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn">عرض المشروع</a>
+                    </div>
+                </div>
+                
+                <!-- مشروع 2 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="تطبيق Flutter">
+                    </div>
+                    <div class="card-body">
+                        <h3>تطبيق جوال بتقنية Flutter</h3>
+                        <p>تطبيق جوال متكامل لإدارة المهام باستخدام Dart وFlutter، مع دعم كامل للأنظمة الأساسية المختلفة.</p>
+                        <div class="skills">
+                            <span class="tag">Dart</span>
+                            <span class="tag">Flutter</span>
+                            <span class="tag">Firebase</span>
+                            <span class="tag">REST API</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn">عرض المشروع</a>
+                    </div>
+                </div>
+                
+                <!-- مشروع 3 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="موقع ويب بلارافيل">
+                    </div>
+                    <div class="card-body">
+                        <h3>موقع ويب تجارة إلكترونية بلارافيل</h3>
+                        <p>منصة تسوق إلكترونية متكاملة مع نظام دفع، إدارة المنتجات، وتجربة مستخدم محسنة.</p>
+                        <div class="skills">
+                            <span class="tag">PHP</span>
+                            <span class="tag">Laravel</span>
+                            <span class="tag">MySQL</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn">عرض المشروع</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- الجدول الزمني -->
+    <section id="timeline" style="background-color: #f8f9fa;">
+        <div class="container">
+            <div class="section-title">
+                <h2>رحلة التعلم الزمنية</h2>
+            </div>
+            
+            <div class="timeline-container">
+                <!-- مرحلة 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>المرحلة الأولى: الأساسيات</h3>
+                        <p>Foundations Level 1 & 2</p>
+                        <p>Algorithms Level 1</p>
+                        <p>C# Level 1</p>
+                        <div class="skills">
+                            <span class="tag">أساسيات البرمجة</span>
+                            <span class="tag">خوارزميات بسيطة</span>
+                            <span class="tag">C# أساسيات</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- مرحلة 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>المرحلة الثانية: التطوير</h3>
+                        <p>Algorithms Level 2 & 3</p>
+                        <p>C# Level 2 & 3</p>
+                        <p>OOP Level 1 & 2</p>
+                        <div class="skills">
+                            <span class="tag">خوارزميات متوسطة</span>
+                            <span class="tag">OOP</span>
+                            <span class="tag">C# متقدم</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- مرحلة 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>المرحلة الثالثة: التخصص</h3>
+                        <p>Database Level 1 & 2</p>
+                        <p>Data Structures Level 1 & 2</p>
+                        <p>Algorithms Level 4 & 5</p>
+                        <div class="skills">
+                            <span class="tag">قواعد البيانات</span>
+                            <span class="tag">هياكل البيانات</span>
+                            <span class="tag">خوارزميات متقدمة</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- مرحلة 4 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>المرحلة الرابعة: الإتقان</h3>
+                        <p>C# Level 4</p>
+                        <p>Algorithms Level 6</p>
+                        <p>RESTful API on .NET Core</p>
+                        <p>Windows Services</p>
+                        <div class="skills">
+                            <span class="tag">.NET Core</span>
+                            <span class="tag">REST API</span>
+                            <span class="tag">مشاريع متكاملة</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- مرحلة 5 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>المرحلة الخامسة: التوسع</h3>
+                        <p>PHP & Laravel</p>
+                        <p>Dart & Flutter</p>
+                        <p>JavaScript & Frontend</p>
+                        <div class="skills">
+                            <span class="tag">تطوير الويب</span>
+                            <span class="tag">تطوير الجوال</span>
+                            <span class="tag">تعدد التقنيات</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الشهادات -->
+    <section id="certificates">
+        <div class="container">
+            <div class="section-title">
+                <h2>الشهادات والمشاريع العملية</h2>
+            </div>
+            
+            <div class="certificates-container">
+                <!-- شهادة 1 -->
+                <div class="certificate-card">
+                    <div class="certificate-image">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="card-body">
+                        <h3>مسار الخوارزميات المتكامل (6 مستويات)</h3>
+                        <p>إتقان كامل للخوارزميات من الأساسيات إلى المستويات المتقدمة بما في ذلك الرسوم البيانية والبرمجة الديناميكية.</p>
+                        <p><strong>المهارات:</strong> تحليل التعقيد، Sorting، Searching، Graphs، Dynamic Programming</p>
+                    </div>
+                </div>
+                
+                <!-- شهادة 2 -->
+                <div class="certificate-card">
+                    <div class="certificate-image">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="card-body">
+                        <h3>مسار قواعد البيانات المتقدم</h3>
+                        <p>تصميم وإدارة قواعد البيانات باستخدام SQL و T-SQL مع مشروع قاعدة بيانات متكامل.</p>
+                        <p><strong>المهارات:</strong> SQL، T-SQL، Database Design، Stored Procedures، Functions</p>
+                    </div>
+                </div>
+                
+                <!-- شهادة 3 -->
+                <div class="certificate-card">
+                    <div class="certificate-image">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="card-body">
+                        <h3>تطوير تطبيقات .NET متكاملة</h3>
+                        <p>مشروع كامل في C# مع قاعدة بيانات، واجهة مستخدم، وواجهة برمجة APIs.</p>
+                        <p><strong>المهارات:</strong> C#، .NET Core، REST API، SQL Server، Windows Services</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- الفوتر -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ملخص المهارات</h3>
+                    <p>أمتلك خبرة في أكثر من 24 كورساً تقنياً، مع إتقان للغات برمجة متعددة وأطر عمل مختلفة، وقدرة على تطوير حلول متكاملة من البداية حتى النهاية.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>التواصل معي</h3>
+                    <p><i class="fas fa-envelope"></i> email@example.com</p>
+                    <p><i class="fas fa-phone"></i> +966 55 123 4567</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-codepen"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>اللغات والتقنيات</h3>
+                    <div class="skill-list">
+                        <span class="tag">C#</span>
+                        <span class="tag">.NET Core</span>
+                        <span class="tag">SQL</span>
+                        <span class="tag">Flutter</span>
+                        <span class="tag">Laravel</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                    <a href="#" class="btn" style="margin-top: 15px;"><i class="fas fa-download"></i> تحميل السيرة الذاتية</a>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2024 جميع الحقوق محفوظة | تم التصميم والبرمجة باستخدام HTML, CSS, JavaScript</p>
+                <p>يظهر الموقع رحلة تعلم أكثر من 24 كورساً تقنياً في البرمجة والخوارزميات وقواعد البيانات</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // تفعيل القائمة المتحركة
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menuToggle');
+            const navMenu = document.getElementById('navMenu');
+            
+            menuToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('show');
+            });
+            
+            // إغلاق القائمة عند النقر على رابط
+            document.querySelectorAll('nav a').forEach(link => {
+                link.addEventListener('click', function() {
+                    navMenu.classList.remove('show');
+                });
+            });
+            
+            // تفعيل التصفية للكورسات
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const courseCards = document.querySelectorAll('.course-card');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // إزالة النشاط من جميع الأزرار
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // إضافة النشاط للزر المضغوط
+                    this.classList.add('active');
+                    
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    // تصفية العناصر
+                    courseCards.forEach(card => {
+                        if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                            card.style.display = 'block';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'translateY(0)';
+                            }, 10);
+                        } else {
+                            card.style.opacity = '0';
+                            card.style.transform = 'translateY(20px)';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+            
+            // تفعيل التنقل السلس
+            document.querySelectorAll('nav a, .hero .btn').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    if (this.getAttribute('href').startsWith('#')) {
+                        e.preventDefault();
+                        
+                        const targetId = this.getAttribute('href');
+                        const targetSection = document.querySelector(targetId);
+                        
+                        if (targetSection) {
+                            window.scrollTo({
+                                top: targetSection.offsetTop - 70,
+                                behavior: 'smooth'
+                            });
+                            
+                            // تحديد العنصر النشط في القائمة
+                            document.querySelectorAll('nav a').forEach(link => {
+                                link.classList.remove('active');
+                            });
+                            this.classList.add('active');
+                        }
+                    }
+                });
+            });
+            
+            // إضافة تأثير عند التمرير
+            window.addEventListener('scroll', function() {
+                const header = document.querySelector('header');
+                if (window.scrollY > 100) {
+                    header.style.padding = '0.8rem 0';
+                    header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+                } else {
+                    header.style.padding = '1.5rem 0';
+                    header.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+                }
+                
+                // إضافة تأثير للجدول الزمني
+                const timelineItems = document.querySelectorAll('.timeline-item');
+                timelineItems.forEach(item => {
+                    const itemTop = item.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (itemTop < windowHeight * 0.85) {
+                        item.style.opacity = '1';
+                        item.style.transform = 'translateX(0)';
+                    }
+                });
+            });
+            
+            // تهيئة الجدول الزمني
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            timelineItems.forEach(item => {
+                item.style.opacity = '0';
+                if (item.classList.contains('timeline-item:nth-child(odd)') || Array.from(item.classList).includes('timeline-item') && Array.from(item.parentElement.children).indexOf(item) % 2 === 0) {
+                    item.style.transform = 'translateX(-30px)';
+                } else {
+                    item.style.transform = 'translateX(30px)';
+                }
+            });
+            
+            // إضافة رسالة عند النقر على أزرار المشاريع
+            document.querySelectorAll('.project-card .btn').forEach(button => {
+                button.addEventListener('click', function(e) {
+                    if (!this.getAttribute('href') || this.getAttribute('href') === '#') {
+                        e.preventDefault();
+                        alert('هذا مشروع تجريبي. في النسخة الحقيقية سيتم ربطه بالمشروع الفعلي أو مستودع GitHub.');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
